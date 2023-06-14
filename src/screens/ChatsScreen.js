@@ -1,10 +1,15 @@
-import{View, Text} from 'react-native';
+import{FlatList} from 'react-native';
 import React from 'react';
+import chats from '../../assets/data/chats.json';
+import ChatListItem from '../components/ChatListItem';
 
-const ChatsScreens = () => {
-    return{
-        <View>ChatsScreens</View>
-    };
-}
+const ChatsScreen = () => {
+    return (
+        <FlatList
+            data={chats}
+            renderItem={({item}) => <ChatListItem chat={item}/>}
+        />
+    );
+};
 
-export default ChatsScreens
+export default ChatsScreen;
